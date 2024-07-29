@@ -1,0 +1,49 @@
+<div>
+  <h2>Загальна таблиця</h2>
+
+  <div>
+    <label for="issuance-date">Фільтр періоду дат видачі кредиту:</label>
+    <input
+      type="date"
+      id="issuance-date"
+      (change)="filterByIssuanceDate($event)"
+    />
+  </div>
+  <div>
+    <label for="return-date">Фільтр періоду дат повернення кредиту:</label>
+    <input type="date" id="return-date" (change)="filterByReturnDate($event)" />
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" (change)="filterByOverdue($event)" />
+      Показати прострочені кредити
+    </label>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Issuance Date</th>
+        <th>Return Date</th>
+        <th>Actual Return Date</th>
+        <th>Body</th>
+        <th>Percent</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(loan of filteredData; track loan.id){
+      <tr>
+        <td>{{ loan.id }}</td>
+        <td>{{ loan.user }}</td>
+        <td>{{ loan.issuance_date }}</td>
+        <td>{{ loan.return_date }}</td>
+        <td>{{ loan.actual_return_date }}</td>
+        <td>{{ loan.body }}</td>
+        <td>{{ loan.percent }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

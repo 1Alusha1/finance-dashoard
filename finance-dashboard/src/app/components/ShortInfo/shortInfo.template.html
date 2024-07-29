@@ -1,0 +1,48 @@
+<div>
+  <h2>Коротка інформація</h2>
+
+  <div>
+    <h3>Загальна кількість виданих кредитів по місяцях</h3>
+    <ul>
+      @for(item of totalLoansByMonth; track item){
+      <li>{{ item.month }}: {{ item.count }}</li>
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3>Середня сума видачі кредитів по місяцях</h3>
+    <ul>
+      @for(item of averageLoanAmountByMonth; track item){
+      <li>{{ item.month }}: {{ item.averageAmount }}</li>
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3>Загальна сума виданих кредитів по місяцях</h3>
+    <ul>
+      @for(item of totalLoanAmountByMonth; track item){
+      <li>{{ item.month }}: {{ item.totalAmount }}</li>
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3>Загальна сума нарахованих відсотків по місяцях</h3>
+    <ul>
+      @for(item of totalInterestByMonth; track item){
+      <li>{{ item.month }}: {{ item.totalInterest }}</li>
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3>Загальна кількість повернених кредитів по місяцях</h3>
+    <ul>
+      @for(item of totalReturnedLoansByMonth; track item){
+      <li>{{ item.month }}: {{ item.count }}</li>
+      }
+    </ul>
+  </div>
+</div>
